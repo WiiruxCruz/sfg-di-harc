@@ -15,6 +15,7 @@ to source code changes. If you encounter a problem you can compare your code to 
 ### SQL
 * [SQL Beginner to Guru: MySQL Edition](https://www.udemy.com/sql-beginner-to-guru-mysql-edition/?couponCode=GITHUB_REPO_SF5B2G) - SQL is a fundamental must have skill, which employers are looking for. Learn to master SQL on MySQL, the worlds most popular database!
 
+
 ### DevOps
 * [Apache Maven: Beginner to Guru](https://www.udemy.com/apache-maven-beginner-to-guru/?couponCode=GITHUB_REPO_SF5B2G) - **Best Selling Course** Take the mystery out of Apache Maven. Learn how to use Maven to build your Java and Spring Boot projects!
 * [OpenAPI: Beginner to Guru](https://www.udemy.com/course/openapi-beginner-to-guru/?referralCode=0E7F511C749013CA6AAD) - Master OpenAPI (formerly Swagger) to Create Specifications for Your APIs
