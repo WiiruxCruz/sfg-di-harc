@@ -15,12 +15,14 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 		
+		System.out.println("----primary");
 		//el getBean debe ser empezando en minusculas
 		MiControlador mc = (MiControlador) ctx.getBean("miControlador");
 		
-		String saludos = mc.decirHola();
+		//String saludos = mc.decirHola();
 		
-		System.out.println(saludos);
+		//System.out.println(saludos);
+		System.out.println(mc.decirHola());
 		
 		System.out.println("----property");
 		
