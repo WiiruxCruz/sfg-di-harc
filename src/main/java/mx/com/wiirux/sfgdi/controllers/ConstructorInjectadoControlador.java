@@ -1,7 +1,10 @@
 package mx.com.wiirux.sfgdi.controllers;
 
+import org.springframework.stereotype.Controller;
+
 import mx.com.wiirux.sfgdi.services.SaludosService;
 
+@Controller
 public class ConstructorInjectadoControlador {
 	private final SaludosService ss3;
 	
