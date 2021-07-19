@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import mx.com.wiirux.sfgdi.services.impl.SaludosServiceImpl;
+import mx.com.wiirux.sfgdi.services.impl.ConstructorSaludosServiceImpl;
 
 class ConstructorInjectadoControladorTest {
 	
@@ -14,7 +14,7 @@ class ConstructorInjectadoControladorTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		controlador = new ConstructorInjectadoControlador( new SaludosServiceImpl() );
+		controlador = new ConstructorInjectadoControlador( new ConstructorSaludosServiceImpl() );
 	}
 
 	@Test

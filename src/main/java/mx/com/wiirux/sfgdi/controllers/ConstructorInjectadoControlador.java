@@ -1,5 +1,6 @@
 package mx.com.wiirux.sfgdi.controllers;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import mx.com.wiirux.sfgdi.services.SaludosService;
@@ -8,7 +9,10 @@ import mx.com.wiirux.sfgdi.services.SaludosService;
 public class ConstructorInjectadoControlador {
 	private final SaludosService ss3;
 	
-	public ConstructorInjectadoControlador(SaludosService ss3) {
+	public ConstructorInjectadoControlador(
+			@Qualifier("constructorSaludosServiceImpl")
+			SaludosService ss3
+	) {
 		this.ss3 = ss3;
 	}
 	

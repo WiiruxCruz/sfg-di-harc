@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import mx.com.wiirux.sfgdi.services.impl.SaludosServiceImpl;
+import mx.com.wiirux.sfgdi.services.impl.ConstructorSaludosServiceImpl;
 
 class PropiedadInjectadaControladorTest {
 	
@@ -14,7 +14,7 @@ class PropiedadInjectadaControladorTest {
 	@BeforeEach
 	void setUp() {
 		controlador = new PropiedadInjectadaControlador();
-		controlador.ss = new SaludosServiceImpl();
+		controlador.ss = new ConstructorSaludosServiceImpl();
 	}
 	
 	

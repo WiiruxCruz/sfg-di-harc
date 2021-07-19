@@ -6,7 +6,7 @@ package mx.com.wiirux.sfgdi.controllers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import mx.com.wiirux.sfgdi.services.impl.SaludosServiceImpl;
+import mx.com.wiirux.sfgdi.services.impl.ConstructorSaludosServiceImpl;
 
 /**
  * @author wii64
@@ -28,7 +28,7 @@ class SetterInjectadoControladorTest {
 	@BeforeEach
 	void setUp() {
 		controlador = new SetterInjectadoControlador();
-		controlador.setSaludosService(new SaludosServiceImpl());
+		controlador.setSaludosService(new ConstructorSaludosServiceImpl());
 	}
 
 	/**
