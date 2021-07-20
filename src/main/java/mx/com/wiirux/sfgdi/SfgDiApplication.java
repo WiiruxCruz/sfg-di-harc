@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 
 import mx.com.wiirux.sfgdi.controllers.ConstructorInjectadoControlador;
 import mx.com.wiirux.sfgdi.controllers.MiControlador;
+import mx.com.wiirux.sfgdi.controllers.PetController;
 import mx.com.wiirux.sfgdi.controllers.PropiedadInjectadaControlador;
 import mx.com.wiirux.sfgdi.controllers.SetterInjectadoControlador;
 import mx.com.wiirux.sfgdi.controllers.i18nControlador;
@@ -15,6 +16,10 @@ public class SfgDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+		
+		System.out.println("--- The Best Pet is ---");
+		PetController petController = ctx.getBean("petController", PetController.class);
+		System.out.println(petController.whichPetIsTheBest());
 		
 		System.out.println("----profile active");
 		i18nControlador i18nc = (i18nControlador) ctx.getBean("i18nControlador");
