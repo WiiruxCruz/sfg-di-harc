@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import mx.com.wiirux.sfgdi.services.SaludosService;
 
-@Profile("ES")
+@Profile({"ES", "default"})
 @Service("i18nService")
 public class i18nEspaniolSaludosServiceImpl implements SaludosService {
 
