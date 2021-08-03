@@ -5,8 +5,6 @@ import org.springframework.stereotype.Service;
 
 import mx.com.wiirux.sfgdi.services.SaludosService;
 
-@Profile("EN")
-@Service("i18nService")
 public class i18nInglesSaludosServiceImpl implements SaludosService {
 
 	@Override

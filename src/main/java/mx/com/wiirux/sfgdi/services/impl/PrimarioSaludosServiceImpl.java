@@ -5,8 +5,7 @@ import org.springframework.stereotype.Service;
 
 import mx.com.wiirux.sfgdi.services.SaludosService;
 
-@Primary
-@Service
+
 public class PrimarioSaludosServiceImpl implements SaludosService {
 
 	@Override
