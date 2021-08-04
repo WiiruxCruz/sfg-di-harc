@@ -12,7 +12,7 @@ import mx.com.wiirux.sfgdi.controllers.PropiedadInjectadaControlador;
 import mx.com.wiirux.sfgdi.controllers.SetterInjectadoControlador;
 import mx.com.wiirux.sfgdi.controllers.i18nControlador;
 
-@ComponentScan(basePackages = {"mx.com.wiirux.sfgdi", "com.otro.wiirux.pets.services"})
+//@ComponentScan(basePackages = {"mx.com.wiirux.sfgdi", "com.otro.wiirux.pets.services"})
 @SpringBootApplication
 public class SfgDiApplication {
 

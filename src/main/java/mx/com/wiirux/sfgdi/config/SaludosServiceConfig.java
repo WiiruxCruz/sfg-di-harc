@@ -5,6 +5,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
+import com.otro.wiirux.pets.services.PetService;
+import com.otro.wiirux.pets.services.PetServiceFactory;
+
+import mx.com.wiirux.sfgdi.repositories.SaludoInglesRepository;
+import mx.com.wiirux.sfgdi.repositories.impl.SaludoInglesRepositoryImpl;
 import mx.com.wiirux.sfgdi.services.impl.ConstructorSaludosServiceImpl;
 import mx.com.wiirux.sfgdi.services.impl.PrimarioSaludosServiceImpl;
 import mx.com.wiirux.sfgdi.services.impl.PropiedadSaludosServiceImpl;
@@ -15,16 +20,38 @@ import mx.com.wiirux.sfgdi.services.impl.i18nInglesSaludosServiceImpl;
 @Configuration
 public class SaludosServiceConfig {
 	
+	@Bean
+	PetServiceFactory petServiceFactory() {
+		return new PetServiceFactory();
+	}
+	
+	@Profile({"dog", "default"})
+	@Bean
+	PetService dogPetService(PetServiceFactory petServiceFactory) {
+		return petServiceFactory.getPetService("dog");
+	}
+	
+	@Profile("cat")
+	@Bean
+	PetService catPetService(PetServiceFactory petServiceFactory) {
+		return petServiceFactory.getPetService("cat");
+	}
+	
 	@Profile({"ES", "default"})
 	@Bean("i18nService")
 	i18nEspaniolSaludosServiceImpl i18nEspaniolSaludosServiceImpl() {
 		return new i18nEspaniolSaludosServiceImpl();
 	}
 	
+	@Bean
+	SaludoInglesRepository saludoInglesRespository() {
+		return new SaludoInglesRepositoryImpl();
+	}
+	
 	@Profile("EN")
 	@Bean
-	i18nInglesSaludosServiceImpl i18nService() {
-		return new i18nInglesSaludosServiceImpl();
+	i18nInglesSaludosServiceImpl i18nService(SaludoInglesRepository sir) {
+		return new i18nInglesSaludosServiceImpl(sir);
 	}
 	
 	@Primary
