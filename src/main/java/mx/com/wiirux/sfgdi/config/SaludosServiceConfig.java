@@ -2,6 +2,7 @@ package mx.com.wiirux.sfgdi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
@@ -17,6 +18,7 @@ import mx.com.wiirux.sfgdi.services.impl.SetterSaludosServiceImpl;
 import mx.com.wiirux.sfgdi.services.impl.i18nEspaniolSaludosServiceImpl;
 import mx.com.wiirux.sfgdi.services.impl.i18nInglesSaludosServiceImpl;
 
+@ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class SaludosServiceConfig {
 	
@@ -60,10 +62,12 @@ public class SaludosServiceConfig {
 		return new PrimarioSaludosServiceImpl();
 	}
 	
-	@Bean
+	//@Bean
+	/*
 	ConstructorSaludosServiceImpl constructorSaludosServiceImpl() {
 		return new ConstructorSaludosServiceImpl();
 	}
+	*/
 	
 	@Bean
 	PropiedadSaludosServiceImpl propiedadSaludosServiceImpl() {
