@@ -2,7 +2,7 @@ package mx.com.wiirux.sfgdi.controllers;
 
 import org.springframework.stereotype.Controller;
 
-import mx.com.wiirux.sfgdi.services.PetService;
+import com.otro.wiirux.pets.services.PetService;
 
 @Controller
 public class PetController {

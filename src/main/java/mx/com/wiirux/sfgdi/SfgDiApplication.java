@@ -3,6 +3,7 @@ package mx.com.wiirux.sfgdi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 import mx.com.wiirux.sfgdi.controllers.ConstructorInjectadoControlador;
 import mx.com.wiirux.sfgdi.controllers.MiControlador;
@@ -10,7 +11,10 @@ import mx.com.wiirux.sfgdi.controllers.PetController;
 import mx.com.wiirux.sfgdi.controllers.PropiedadInjectadaControlador;
 import mx.com.wiirux.sfgdi.controllers.SetterInjectadoControlador;
 import mx.com.wiirux.sfgdi.controllers.i18nControlador;
+import mx.com.wiirux.sfgdi.services.PrototypeBean;
+import mx.com.wiirux.sfgdi.services.SingletonBean;
 
+//@ComponentScan(basePackages = {"mx.com.wiirux.sfgdi", "com.otro.wiirux.pets.services"})
 @SpringBootApplication
 public class SfgDiApplication {
 
@@ -52,6 +56,17 @@ public class SfgDiApplication {
 		ConstructorInjectadoControlador cic = (ConstructorInjectadoControlador) ctx.getBean("constructorInjectadoControlador");
 		
 		System.out.println(cic.getSaludos3());
+		
+		System.out.println("----- BEAN SCOPES -----");
+		SingletonBean sb1 = ctx.getBean(SingletonBean.class);
+		System.out.println(sb1.getMyScope());
+		SingletonBean sb2 = ctx.getBean(SingletonBean.class);
+		System.out.println(sb2.getMyScope());
+		
+		PrototypeBean pb1 = ctx.getBean(PrototypeBean.class);
+		System.out.println(pb1.getMyScope());
+		PrototypeBean pb2 = ctx.getBean(PrototypeBean.class);
+		System.out.println(pb2.getMyScope());
 	}
 
 }
