@@ -1,14 +1,17 @@
 package mx.com.wiirux.sfgdi.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.PropertySource;
 
 import com.otro.wiirux.pets.services.PetService;
 import com.otro.wiirux.pets.services.PetServiceFactory;
 
+import mx.com.wiirux.sfgdi.datasource.FakeDataSource;
 import mx.com.wiirux.sfgdi.repositories.SaludoInglesRepository;
 import mx.com.wiirux.sfgdi.repositories.impl.SaludoInglesRepositoryImpl;
 import mx.com.wiirux.sfgdi.services.impl.ConstructorSaludosServiceImpl;
@@ -18,9 +21,24 @@ import mx.com.wiirux.sfgdi.services.impl.SetterSaludosServiceImpl;
 import mx.com.wiirux.sfgdi.services.impl.i18nEspaniolSaludosServiceImpl;
 import mx.com.wiirux.sfgdi.services.impl.i18nInglesSaludosServiceImpl;
 
+@PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class SaludosServiceConfig {
+	
+	@Bean
+	FakeDataSource fakeDataSource(
+			@Value("${wiirux.username}") String username,
+			@Value("${wiirux.password}") String password,
+			@Value("${wiirux.jdbcurl}") String jdbcurl
+	) {
+		FakeDataSource fds = new FakeDataSource();
+		fds.setUsername(username);
+		fds.setPassword(password);
+		fds.setJdbcurl(jdbcurl);
+		
+		return fds;
+	}
 	
 	@Bean
 	PetServiceFactory petServiceFactory() {
