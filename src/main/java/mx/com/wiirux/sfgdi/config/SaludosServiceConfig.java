@@ -27,14 +27,12 @@ public class SaludosServiceConfig {
 	
 	@Bean
 	FakeDataSource fakeDataSource(
-			@Value("${wiirux.username}") String username,
-			@Value("${wiirux.password}") String password,
-			@Value("${wiirux.jdbcurl}") String jdbcurl
+			SfgConfiguration sfgc
 	) {
 		FakeDataSource fds = new FakeDataSource();
-		fds.setUsername(username);
-		fds.setPassword(password);
-		fds.setJdbcurl(jdbcurl);
+		fds.setUsername(sfgc.getUsername());
+		fds.setPassword(sfgc.getPassword());
+		fds.setJdbcurl(sfgc.getJdbcurl() + "HARC");
 		
 		return fds;
 	}

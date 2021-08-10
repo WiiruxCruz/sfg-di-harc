@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
+import mx.com.wiirux.sfgdi.config.SfgConfiguration;
 import mx.com.wiirux.sfgdi.controllers.ConstructorInjectadoControlador;
 import mx.com.wiirux.sfgdi.controllers.MiControlador;
 import mx.com.wiirux.sfgdi.controllers.PetController;
@@ -76,6 +77,13 @@ public class SfgDiApplication {
 		System.out.println(fds.getUsername());
 		System.out.println(fds.getPassword());
 		System.out.println(fds.getJdbcurl());
+		
+		System.out.println("----- Configuration props bean");
+		SfgConfiguration sfgc = ctx.getBean(SfgConfiguration.class);
+		
+		System.out.println(sfgc.getUsername());
+		System.out.println(sfgc.getPassword());
+		System.out.println(sfgc.getJdbcurl());
 	}
 
 }
