@@ -1,7 +1,16 @@
 spring:
-  profiles:    active: dog, EN, qa
+  profiles:    active:
+      - dog
+      - EN
+      - prod
 wiirux:
   username: YmlUsername
   password: YmlPassword
   jdbcurl: YmlUrlDB
-    
+
+---
+spring:  profiles: prod
+wiirux:
+  username: YmlProdUsername
+  password: YmlProdPassword
+  jdbcurl: YmlProdUrlDB
