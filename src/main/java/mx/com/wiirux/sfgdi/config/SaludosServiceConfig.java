@@ -21,7 +21,6 @@ import mx.com.wiirux.sfgdi.services.impl.SetterSaludosServiceImpl;
 import mx.com.wiirux.sfgdi.services.impl.i18nEspaniolSaludosServiceImpl;
 import mx.com.wiirux.sfgdi.services.impl.i18nInglesSaludosServiceImpl;
 
-@PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class SaludosServiceConfig {
