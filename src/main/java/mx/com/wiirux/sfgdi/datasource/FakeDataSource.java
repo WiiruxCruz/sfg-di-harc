@@ -6,7 +6,6 @@ public class FakeDataSource {
 	private String jdbcurl;
 	
 	
-	
 	public String getUsername() {
 		return username;
 	}
